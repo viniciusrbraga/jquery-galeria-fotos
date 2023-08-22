@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0px;
+    color: #fff;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+
+    /* deixa o botão ao lado do título */
+    display: flex;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0px;
+    text-align: center;
+
+    /* Inibe a exibição do formulário */
+    /* para exibir apenas quando a função SLIDEDOWN for acionada */
+    display: none;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input,
+button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    /* Coloca os elementos em uma mesma linha */
+    display: flex;
+
+    /* Quando ocupar todo o limite da tela, será criada uma nova linha */
+    flex-wrap: wrap;
+}
+
+ul li {
+    max-width: 25%;
+
+    /* remove as bolinhas da imagem */
+    list-style: none;
+
+    /* Para evitar o 'vazamento' de um elemento no lay-out */
+    /* (em função do uso do POSITION: ABSOLUTE),           */
+    /* ficando concentrado no elemento PAI                 */
+    position: relative;
+
+    max-height: 220px;
+
+    /* Oculta parte da imagem que ultrapassar o limite máximo de tamanho */
+    overflow-y: hidden;
+}
+
+ul li img {
+    width: 100%;
+}
+
+.overlay-image-link {
+    padding: 16px;
+
+    /* RGBA para aplicar um esquema de cores transparente */
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* Posiciona o elemento no canto inferior do LI */
+    position: absolute;
+
+    /* Coloca a opacidade = 0, tornando o elemento invisível */
+    opacity: 0;
+
+    /* Oculta/exibe o elemento de forma suave, em 0.5 segundos */
+    transition: ease .5s;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+ul li:hover .overlay-image-link {
+    /* Coloca opacidade = 1, tornando o elemento visível, quando apontado com o mouse */
+    opacity: 1;
+}
+
+/* formata o link */
+.overlay-image-link a {
+    color: #fff;
+
+    /* retira o sublinhado do texto do link */
+    text-decoration: none;
+}
